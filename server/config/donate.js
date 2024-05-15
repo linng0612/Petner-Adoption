@@ -1,4 +1,3 @@
-
 const express = require('express');
 const paypal = require('paypal-rest-sdk');
 const dotenv = require('dotenv');
@@ -13,7 +12,6 @@ paypal.configure({
 
 router.post('/donate', (req, res) => {
     console.log('POST request received at /donate');
-
     const { amount, monthly } = req.body;
     const currency = 'EUR';
 
@@ -23,19 +21,10 @@ router.post('/donate', (req, res) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3000/api/donate/success",
-            "cancel_url": "http://localhost:3000/api/donate/cancel"
+            "return_url": `http://localhost:3000/api/donate-success?amount=${amount}&currency=${currency}`,
+            "cancel_url": "http://localhost:5173/donate/cancel"
         },
         "transactions": [{
-            "item_list": {
-                "items": [{
-                    "name": "Donation",
-                    "sku": "001",
-                    "price": amount,
-                    "currency": currency,
-                    "quantity": 1
-                }]
-            },
             "amount": {
                 "currency": currency,
                 "total": amount
@@ -51,43 +40,47 @@ router.post('/donate', (req, res) => {
             console.error(error);
             return res.status(500).send("An error occurred while processing the donation.");
         } else {
-            for (let i = 0; i < payment.links.length; i++) {
-                if (payment.links[i].rel === 'approval_url') {
-                    return res.redirect(payment.links[i].href);
-                }
+            const approvalUrl = payment.links.find(link => link.rel === 'approval_url');
+            if (approvalUrl) {
+                res.json({ url: approvalUrl.href });
+            } else {
+                return res.status(500).send("Could not retrieve approval URL from PayPal.");
             }
-            return res.status(500).send("Could not retrieve approval URL from PayPal.");
         }
     });
 });
 
-router.get('/success', (req, res) => {
+router.get('/donate-success', (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
-    const amount = req.query.amount; 
+    let amount = req.query.amount; 
+    const currency = req.query.currency;
 
+    console.log('query:', req.query);
     const execute_payment_json = {
         "payer_id": payerId,
         "transactions": [{
             "amount": {
-                "currency": "EUR",
-                "total": amount 
+                "currency": currency,
+                "total": amount
             }
         }]
     };
 
     paypal.payment.execute(paymentId, execute_payment_json, function(error, payment) {
         if (error) {
-            console.log(error.response);
-            throw error;
+            console.error("Payment execution failed:", error.response);
+            return res.status(500).send("Payment execution failed. Please try again later.");
         } else {
-            console.log(JSON.stringify(payment));
-            res.send('Thank you for your donation!');
+            console.log("Payment successful:", JSON.stringify(payment));
+            res.redirect('http://localhost:5173/donate/success');
         }
     });
 });
 
 
-router.get('/cancel', (req, res) => res.send('Donation cancelled'));
+router.get('/api/donate-cancel', (req, res) => {
+    res.send('Donation cancelled.');
+});
 
 module.exports = router;

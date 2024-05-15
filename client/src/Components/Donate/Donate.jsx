@@ -1,30 +1,29 @@
 // DonatePage.jsx
 import React from 'react';
 import axios from 'axios';
-import useDonate from '../../Hooks/useDonate';
 import { Form, Input, Checkbox, Button , Card} from 'antd';
 import './Donate.css';
 
 const DonatePage = () => {
-  const { amount, setAmount, monthly, setMonthly } = useDonate();
-
   const handleSubmit = async (values) => {
-    alert('handleSubmit called');  // Alert when handleSubmit is called
-    console.log('handleSubmit called');  // Log when handleSubmit is called
+    console.log('handleSubmit called');  
     try {
         const response = await axios.post('http://localhost:3000/api/donate', {
             amount: Number(values.amount),
             monthly: values.monthly,
+        }, {
+            withCredentials: true  
         });
-      const data = response.data;
-      console.log('Server response:', data);  // Log the server response
-      if (data.url) {
-        window.location.href = data.url;
-      }
+        const data = response.data;
+        console.log('Server response:', data);  
+        if (data.url) {
+            window.location.href = data.url;
+        }
     } catch (error) {
-      console.error('Error:', error);  // Log any errors
+        console.error('Error:', error);  
     }
-  };
+};
+
 
   return (
     <div className="donate-page">

@@ -6,7 +6,6 @@ import Footer from '../../Components/Footer/Footer';
 import DonatePage from '../../Components/Donate/Donate';
 import { DonateProvider } from '../../Contexts/donateContext';
 
-
 const Homepage = () => {
   return (
     <>
@@ -15,7 +14,6 @@ const Homepage = () => {
       <DonateProvider>
         <DonatePage/>
       </DonateProvider>
-      
       <Footer/>
     </>
   );

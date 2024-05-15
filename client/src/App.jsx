@@ -7,7 +7,8 @@ import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import { useAuth } from './Contexts/AuthContext';
 import './App.css';
-
+import DonateCancle from './Components/Donate/DonateCancle';
+import DonateSuccess from './Components/Donate/DonateSuccess';
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -15,13 +16,13 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        
-        
-        <Route path="/login" element={ !isAuthenticated ? <Login /> :<Navigate to ="/"/>} />
-        <Route path="/register" element={ !isAuthenticated ? <Register /> : <Navigate to ="/"/>} />
-        
-        </Routes>
-
+        <Route path="/donate/cancel" element={<DonateCancle/>}/>
+        <Route path="/donate/success" element={<DonateSuccess/>}/>
+        {/* <Route path="/login" element={ !isAuthenticated ? <Login /> :<Navigate to ="/"/>} /> */}
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/register" element={ !isAuthenticated ? <Register /> : <Navigate to ="/"/>} /> */}
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </Router>
   );
 }
