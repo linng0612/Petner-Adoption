@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.hero img{
+  width: 100%; /* or use 100% 100% to stretch the image */
+  background-position: center; /* center the image */
+  height: 100vh;
+    
+}
+.hero-text{
+  position: absolute;
+  display:block;
+  top: 50%;
+  left:45%;
+  transform: translate(-90%, -10%);
+  text-align: center;
+  color: white;
+  padding-left:15%;
+  
+}
+
+.hero-text h1 {
+  font-size: 47px;
+  font-weight: 700;
+  margin-bottom: 20px; 
+}
+
+.hero-text p {
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 20px; 
+}

@@ -1,0 +1,10 @@
+.sub-hero{
+    height:20vh;
+    position: fixed;
+}
+
+.sub-hero img{
+    width:100%;
+    height:auto;
+
+}

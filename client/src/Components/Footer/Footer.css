@@ -1,0 +1,51 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#dde6dd;
+    color:black;
+}
+
+.left, .right {
+    flex: 1;
+}
+.left {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.left img{
+    width: 250px;
+    height: auto;
+    cursor: pointer;
+}
+.left a{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.info-section {
+    margin-bottom: 20px;
+  }
+  
+.info-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+  
+.info-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+.contact-detail .faPhone, .contact-detail .faEnvelope, .contact-detail .faMapMarkerAlt {
+    margin-right: 10px;
+}

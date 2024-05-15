@@ -1,0 +1,26 @@
+/* Donate.css */
+.donate-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .donate-card {
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .donate-card .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+  
+  .donate-card .ant-form-item {
+    margin-bottom: 16px;
+  }
