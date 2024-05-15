@@ -6,8 +6,6 @@ const createError = require('../utils/appError');
 
 dotenv.config();
 
-
-//register
 exports.register = async (req, res, next) => {
     try{
         const user= await User.findOne({email:req.body.email});
@@ -37,7 +35,6 @@ exports.register = async (req, res, next) => {
 }
 
 
-//Login
 exports.login = async (req, res, next) => {
     try{
         const {email,password} = req.body;
@@ -70,7 +67,6 @@ exports.login = async (req, res, next) => {
     }
 };
 
-//get user by id
 exports.getUserById = async (req, res, next) => {
     try{
         const user = await User.findById(req.params.id);

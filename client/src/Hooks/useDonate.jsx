@@ -1,4 +1,4 @@
-// donateHook.jsx
+
 import { useContext } from 'react';
 import DonateContext from '../Contexts/donateContext';
 

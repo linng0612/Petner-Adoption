@@ -11,7 +11,7 @@ const connectDatabase = require('./config/database');
 const app = express();
 const donateRouter = require('./config/donate');
 
-// Proper CORS setup
+
 app.use(cors({
     credentials: true,
     origin: 'http://localhost:5173' 
@@ -33,11 +33,11 @@ app.use(function(req, res, next) {
 
 app.use(express.json());
 
-//connect to database
+
 connectDatabase();
 
 
-//global error handler
+
 app.use((err, req, res, next) => {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'error';
@@ -47,7 +47,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-//routes
+
 app.use('/api/adopt', animalRoute);
 app.use('/api/user', userRoute);
 app.use('/api/application', applicationRoute);
@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
     res.send('API is running');
   });
 
-//server
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

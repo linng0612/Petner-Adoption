@@ -12,14 +12,14 @@
 /* form*/
 .form-container{
   width: 1000px;
-  max-height: calc(100vh - 60px); /* viewport height - padding - margin */
+  max-height: calc(100vh - 60px); 
   background: whitesmoke;
   font-weight: 700;
   border-radius: 8px;
-  overflow: hidden; /* hide overflow */
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center content vertically */
+  justify-content: center; 
 
   
 }

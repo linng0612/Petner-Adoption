@@ -1,4 +1,4 @@
-// donateContext.jsx
+
 import React, { createContext, useState } from 'react';
 
 const DonateContext = createContext();

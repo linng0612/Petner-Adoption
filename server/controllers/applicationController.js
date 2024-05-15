@@ -1,7 +1,7 @@
 const Application = require('../models/applicationModel');
 const createError = require('../utils/appError');
 
-// Fill in the adoption form
+
 exports.createApplication = async (req, res, next) => {
     try {
         const newApplication = await Application.create(req.body);
@@ -25,7 +25,7 @@ exports.createApplication = async (req, res, next) => {
     }
 };
 
-// Get a list of adoption applications
+
 exports.getApplication = async (req, res, next) => {
     try {
         const applications = await Application.find();

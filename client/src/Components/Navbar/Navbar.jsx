@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="nav-bar">
       <Link to="/">
-      <img src={logo} alt = "" className="logo"/> {/* Replace with your actual logo */}
+      <img src={logo} alt = "" className="logo"/> 
       </Link>
       
       <ul>

@@ -1,4 +1,4 @@
-// DonatePage.jsx
+
 import React from 'react';
 import axios from 'axios';
 import { Form, Input, Checkbox, Button , Card} from 'antd';

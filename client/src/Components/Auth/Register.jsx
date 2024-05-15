@@ -13,7 +13,7 @@ const Register = () => {
 
     const handleRegister = (values) => {
         registerUser(values);
-    }; //  function will be called when the form is submitted
+    }; 
 
   return(
     <div className="auth-body">
@@ -89,7 +89,7 @@ const Register = () => {
             </Flex>
 
 
-            {/* images */}
+            
             <Flex flex={1}>
                 <img src={registerImage} className="auth-image" />
             </Flex>

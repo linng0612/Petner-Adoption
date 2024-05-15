@@ -2,7 +2,6 @@
 const Category = require('../models/categoryModel');
 const createError = require('../utils/appError');
 
-//Create a new category
 exports.createCategory = async (req, res, next) => {
     try {
         const newCategory = await Category.create(req.body);
@@ -18,9 +17,6 @@ exports.createCategory = async (req, res, next) => {
     }
 };  
 
-
-
-// Get all categories
 exports.getCategory = async (req, res, next) => {
     try {
         const categories = await Category.find();
@@ -34,7 +30,6 @@ exports.getCategory = async (req, res, next) => {
     }
 };
 
-// Get category by id
 exports.getCategoryById = async (req, res, next) => {
     try {
         const category = await Category.findById(req.params.id);
@@ -52,7 +47,6 @@ exports.getCategoryById = async (req, res, next) => {
     }
 };
 
-// Update category by id
 exports.updateCategory = async (req, res, next) => {
     try {
         const updatedCategory = await Category.findByIdAndUpdate(req.params.id, req.body   , {
@@ -73,7 +67,6 @@ exports.updateCategory = async (req, res, next) => {
     }
 };
 
-// Delete category by id
 exports.deleteCategory = async (req, res, next) => {
     try {
         const category = await Category.findByIdAndDelete(req.params.id);

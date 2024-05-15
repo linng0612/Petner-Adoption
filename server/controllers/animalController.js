@@ -1,7 +1,7 @@
 const Animal = require('../models/animalModel.js');
 const createError = require('../utils/appError');
 
-// Get all animals
+
 exports.getallAnimal = async (req, res, next) => {
     try {
         const animals = await Animal.find();
@@ -18,10 +18,6 @@ exports.getallAnimal = async (req, res, next) => {
     }
 };
 
-
-
-
-// Get a single animal by id
 exports.getAnimalById = async (req, res, next) => {
     try {
         
@@ -39,7 +35,6 @@ exports.getAnimalById = async (req, res, next) => {
     }
 };
 
-// Create a new animal
 exports.createAnimal = async (req, res, next) => {
     try {
         const newAnimal = await Animal.create(req.body);
@@ -61,7 +56,6 @@ exports.createAnimal = async (req, res, next) => {
     }
 };
 
-// Controller function to update an existing animal
 exports.updateAnimal = async (req, res, next) => {
     try {
         
@@ -82,9 +76,6 @@ exports.updateAnimal = async (req, res, next) => {
         next(error);
     }
 };
-
-
-// Controller function to delete an animal
 
 exports.deleteAnimal = async (req, res, next) => {
     try {

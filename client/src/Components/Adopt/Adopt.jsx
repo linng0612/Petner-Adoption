@@ -11,10 +11,10 @@ const Adopt = () => {
 
   return (
     <div className="page-container">
-      <div className="background-image"></div> {/* New div for background image */}
+      <div className="background-image"></div> 
       
 
-      <section className="adopt-container"> {/* Use Card here */}
+      <section className="adopt-container"> 
         <Card className="category-card">
           <Typography.Title level={3} strong className="title">
             Select Category
