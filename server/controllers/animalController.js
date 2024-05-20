@@ -7,7 +7,7 @@ exports.getallAnimal = async (req, res, next) => {
         const animals = await Animal.find();
 
         if (!animals || animals.length === 0) {
-            return next(new createError('No animals found', 404));
+            return next(new createError('No animal found', 404));
         }
         res.status(200).json({
             status: 'success',
@@ -68,9 +68,7 @@ exports.updateAnimal = async (req, res, next) => {
         }
         res.status(200).json({
             status: 'success',
-            data: {
-                animal: updatedAnimal
-            }
+            animal: updatedAnimal
         });
     } catch (error) {
         next(error);

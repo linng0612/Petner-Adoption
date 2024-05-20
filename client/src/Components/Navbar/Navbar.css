@@ -1,6 +1,7 @@
 nav{
     display:flex;
-    background-color:aliceblue;
+    /* background-color:#dde6dd; */
+    background-color: aliceblue;
     justify-content: space-between;
     align-items: center ;
     padding: 0 30px;
@@ -12,7 +13,7 @@ nav{
     
 }
 .nav-bar{
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);

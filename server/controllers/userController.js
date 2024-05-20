@@ -82,3 +82,58 @@ exports.getUserById = async (req, res, next) => {
         next(error);
     }
 };
+
+
+exports.getAllUsers = async (req, res, next) => {
+    try{
+        const users = await User.find({});
+        if (!users || users.length === 0) {
+            return next(new createError('No user found', 404));
+        }
+        res.status(200).json({
+            status: 'success',
+            users:users
+        });
+
+    }catch(error){
+        next(error);
+    }
+};
+
+exports.updateUser = async (req, res, next) => {
+    try{
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body,{
+            new:true,
+            runValidators:true
+        }); 
+        if (!updatedUser) {
+            return next(new createError('User not found', 404));
+        }
+        res.status(200).json({
+            status: 'success',
+            user:updatedUser
+        });
+
+    }
+    catch(error){
+        next(error);
+    }
+};
+
+exports.deleteUser = async (req, res, next) => {
+    try{
+        const deletedUser = await User.findByIdAndDelete(req.params.id); 
+        if (!deletedUser) {
+            return next(new createError('User not found', 404));
+        }  
+        res.status(200).json({
+            status: 'success',
+            message: 'User deleted successfully',
+        });
+        
+    }   
+    catch(error){
+        next(error);
+    }
+
+}

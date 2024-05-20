@@ -36,13 +36,13 @@ const Footer = () => {
             <div className="info-section">
                 <h3 className="info-title">Contact us</h3>
                 <div className="contact-detail">
-                    <FontAwesomeIcon icon={faPhone} /> (+358)255987563
+                    <FontAwesomeIcon icon={faPhone} />&nbsp; (+358)255987563
                 </div>
                 <div className="contact-detail">
-                    <FontAwesomeIcon icon={faEnvelope} /> petner@gmail.com
+                    <FontAwesomeIcon icon={faEnvelope} />&nbsp; petner@gmail.com
                 </div>
                 <div className="contact-detail">
-                    <FontAwesomeIcon icon={faMapMarkerAlt} /> Raviradantie 777, Mikkeli, Finland
+                    <FontAwesomeIcon icon={faMapMarkerAlt} />&nbsp; Raviradantie 777, Mikkeli, Finland
                 </div>
                 
             </div>

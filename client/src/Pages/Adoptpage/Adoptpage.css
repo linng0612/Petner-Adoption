@@ -1,0 +1,15 @@
+.adoptPage {
+    position: absolute ;
+    width: 100%;
+    background-color: #001f3f;
+}
+
+.adoptPage-intro-img {
+    position: relative;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/025/188/627/non_2x/playful-puppy-and-kitten-sitting-outdoors-enjoying-nature-beauty-generated-by-ai-free-photo.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    width: 100%;
+    height:500px;
+}

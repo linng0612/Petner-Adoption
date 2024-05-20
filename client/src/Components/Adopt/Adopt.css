@@ -1,24 +1,48 @@
 /* Adoptpage.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+  
+.adopt-container {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  color: white;
+}
 
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  
-  
-  .adopt-container {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .category-card {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
+.adopt-main h1{
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.category-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.adopt-filter {
+  width: 100%;
+  margin-top: 50px;
+  display: inline-flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.adopt-filter-button {
+  padding: 5px 190px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: #001f3f;
+  font-weight: 600;
+  height: 40px;
+  cursor: pointer;
+}
+.adopt-filter-button:hover {
+  font-size: 22px;
+  transition: font-size 0.2s ease-in-out;
+}

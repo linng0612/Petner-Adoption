@@ -78,12 +78,6 @@ const Register = () => {
                             </Button>
                     </Form.Item>
 
-                    <Form.Item>
-                        <Link to="/login">
-                        <Button size="large" className="auth-btn">Login</Button>
-                        </Link>
-                        
-                    </Form.Item>
                 </Form>
 
             </Flex>

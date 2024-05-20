@@ -8,12 +8,15 @@ function DonateSuccess() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h1>Thank you for your donation!</h1>
-      <p>Transaction ID: {token}</p>
-      <button onClick={() => navigate('/')}>Go back to homepage</button>
+    <div className="donate-background">
+      <div className="success-cancel">
+        <h1>Thank you for your donation!</h1>
+        <p>Transaction ID: {token}</p>
+        <button onClick={() => navigate('/')} className="btn">Go back to homepage</button>
+      </div>
     </div>
   );
 }
 
 export default DonateSuccess;
+
