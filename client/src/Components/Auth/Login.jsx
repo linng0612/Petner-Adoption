@@ -25,11 +25,11 @@ const Login = () => {
 
       <Card className="form-container ">
           <Flex gap="large" align="center">
-              {/* images */}
+              
               <Flex flex={1}>
                   <img src={loginImage} className="auth-image" />
               </Flex>
-              {/* form */}
+              
               <Flex vertical flex={1}>
                   <Typography.Title level={3} strong className="title">
                       Login

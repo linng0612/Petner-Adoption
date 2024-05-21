@@ -1,4 +1,3 @@
-// Adoptpage.jsx
 import React from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Adopt from '../../Components/Adopt/Adopt';

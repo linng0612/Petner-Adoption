@@ -24,7 +24,7 @@ const Register = () => {
       </div>
     <Card className="form-container">
         <Flex gap="large" align="center">
-            {/* form */}
+           
             <Flex vertical flex={1}>
                 <Typography.Title level={3} strong className="title">
                     Create an account

@@ -20,12 +20,6 @@ const Donatepage = () => {
         <DonateProvider>
         <DonatePage/>
         </DonateProvider>
-  
-  
-  
-  
-  
-        
         <Footer/>
       </>
     );

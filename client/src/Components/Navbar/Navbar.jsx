@@ -4,17 +4,12 @@ import "./Navbar.css"
 import logo from "../../assets/LogoPetner.png"
 import { useState } from 'react';
 import { Menu, Dropdown, Button } from 'antd';
-import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
+import { SettingOutlined, LogoutOutlined , FileOutlined, HistoryOutlined} from '@ant-design/icons';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
     const handleMenuClick = (e) => {
-        if (e.key === 'logout') {
-            console.log('Log Out clicked');
-        } else if (e.key === 'settings') {
-            console.log('Settings clicked');
-        }
         setVisible(false);
     };
 
@@ -24,6 +19,12 @@ const Navbar = () => {
 
     const menu = (
         <Menu onClick={handleMenuClick} style={{background:"aliceblue"}}>
+            <Menu.Item key="application" icon={<FileOutlined />} style={{color:"#001f3f"}}>
+                Manage Application
+            </Menu.Item>
+            <Menu.Item key="history" icon={<HistoryOutlined />} style={{color:"#001f3f"}}>
+                Donate History
+            </Menu.Item>
             <Menu.Item key="settings" icon={<SettingOutlined />} style={{color:"#001f3f"}}>
                 Settings
             </Menu.Item>
@@ -43,7 +44,6 @@ const Navbar = () => {
         <li><Link to="/adopt">Adopt</Link></li>
         <li><Link to="/donate">Donate</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        {/* <li><Link to="/login"><button className="btn">Login</button></Link></li> */}
         <li><Dropdown 
             overlay={menu} 
             onVisibleChange={handleVisibleChange} 

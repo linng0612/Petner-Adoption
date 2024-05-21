@@ -2,8 +2,8 @@
 import { useParams } from "react-router-dom"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
+import axios from "axios"
 import "./AdoptApplication.css"
-import cat3 from "../../assets/Cat3.png"
 import { Button, Form, Input,Checkbox,InputNumber } from 'antd';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -15,17 +15,23 @@ const AdoptApplication = () => {
     const [form] = Form.useForm();
     const [isDisabled, setIsDisabled] = useState(true);
     const id = useParams()
+    const [pet, setPet] = useState([]);
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`http://localhost:3000/api/adopt/${id.id}`);
+            console.log(response.data);
+            setPet(response.data.animal);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }   
+    };
+
+    useEffect(() => {
+        fetchData();     
+        }, []);
+
     const [open,setOpen] = useState(false);
-    const pet = 
-        {
-          "id": 1,
-          "name": "Luna",
-          "category": "cat",
-          "age": 2,
-          "sex": "Female",
-          "description": "Luna is a two-year-old female cat with a gentle disposition. She loves to spend her days sunbathing and watching birds from the window. Luna is spayed and up-to-date on all her vaccinations. She's a bit shy at first but warms up quickly to new people.",
-          "image": cat3
-        }
 
     const updateButtonDisabledState = () => {
         const errors = form.getFieldsError();

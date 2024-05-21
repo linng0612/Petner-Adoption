@@ -9,7 +9,6 @@
   background: #dde6dd;
 }
 
-/* form*/
 .form-container{
   width: 1000px;
   max-height: calc(100vh - 60px); 
@@ -20,13 +19,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center; 
-
-  
 }
 
 .title, .slogan{
-  text-align: center;
-  
+  text-align: center;  
 }
 
 .auth-btn{
@@ -45,7 +41,6 @@
   border-radius: 8px;
   border-right: 0.5px solid #001f3f; 
   border-left: 0.5px solid #001f3f;
-
 }
 
 .alert{

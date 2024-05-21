@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -12,11 +11,13 @@ html,body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-size:100%;
+  height:100%;
+  width: 100%; 
 }
 
 .btn{
-  background-color:#003264;
-  /* background:#001f3f; */
+  background:#001f3f;
   color:#fff;
   padding: 9px 25px;
   font-size:20px;
@@ -29,6 +30,6 @@ html,body{
 }
 
 .btn:hover{
-  background-color: #001f3f !important; 
+  background-color: #0b172e !important; 
   color: #fff !important;
 }
