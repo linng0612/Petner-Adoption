@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Navbar.css"
-import logo from "../../assets/logo.png"
+import logo from "../../assets/LogoPetner.png"
 import { useState } from 'react';
 import { Menu, Dropdown, Button } from 'antd';
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';

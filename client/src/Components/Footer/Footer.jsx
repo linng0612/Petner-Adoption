@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import logo from "../../assets/logo.png"
+import logo from "../../assets/LogoPetner.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';

@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #001f3f;
+  background-color:#003264;
   color: #fff;
   height: 50px;
   padding: 9px 25px;
@@ -73,7 +73,7 @@
 }
 
 .donate-btn:hover {
-  background-color: #0b172e !important;
+  background-color: #001f3f !important;
 }
 
 .donate-label {

@@ -39,10 +39,11 @@ const Contact = () => {
       <Hero 
       cName="hero-mid"
       heroText="hero-mid-text"
-      heroImg="https://images.unsplash.com/photo-1650251381717-17c7fa43966a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      title="CONTACT"
+      heroImg="https://images.unsplash.com/photo-1599572739984-8ae9388f23b5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      
       />
       <div className="contact">
+      
         <div className="contact-col">
         <h2>Sent us a message <FontAwesomeIcon icon={faPaw} /></h2>
           <p>Please get in touch via the form or find our contact information below. Your feedback, questions and suggestions are important to the maintenance and growth of the organization.</p>

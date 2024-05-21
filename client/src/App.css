@@ -15,7 +15,8 @@ html,body{
 }
 
 .btn{
-  background:#001f3f;
+  background-color:#003264;
+  /* background:#001f3f; */
   color:#fff;
   padding: 9px 25px;
   font-size:20px;
@@ -28,6 +29,6 @@ html,body{
 }
 
 .btn:hover{
-  background-color: #0b172e !important; 
+  background-color: #001f3f !important; 
   color: #fff !important;
 }

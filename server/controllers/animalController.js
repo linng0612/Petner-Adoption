@@ -44,11 +44,10 @@ exports.createAnimal = async (req, res, next) => {
                 _id: newAnimal._id,
                 name: newAnimal.name,
                 category: newAnimal.category,
-                breed: newAnimal.breed,
                 age: newAnimal.age,
-                sex: newAnimal.sex,
-                size: newAnimal.size,
-                description: newAnimal.description
+                gender: newAnimal.gender,
+                description: newAnimal.description,
+                image: newAnimal.image
             }
         });
     } catch (error) {

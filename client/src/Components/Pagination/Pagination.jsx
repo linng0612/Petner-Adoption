@@ -28,7 +28,7 @@ const Pagination = ({ items, itemsPerPage }) => {
                                 <h2>{item.name}</h2>
                                 <p className='pagination-content-pet-info-title-bar'></p>
                                 <p className='pagination-content-pet-info-content'><strong>Age: </strong>{item.age} years</p>
-                                <p className='pagination-content-pet-info-content'><strong>Gender: </strong> {item.sex}</p>
+                                <p className='pagination-content-pet-info-content'><strong>Gender: </strong> {item.gender}</p>
 
                                 <div className='pagination-content-pet-info-button'>
                                     <button onClick={() => navigate(`./detail/${item._id}`)}>Detail</button>
