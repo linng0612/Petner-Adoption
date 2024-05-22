@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import Hero from '../Hero/Hero'
 import Footer from '../Footer/Footer'
 import './Contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -34,18 +33,15 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <div className="contactPage">
+      <div className='contactPage-intro-img'></div>
+
       <Navbar/>
-      <Hero 
-      cName="hero-mid"
-      heroText="hero-mid-text"
-      heroImg="https://images.unsplash.com/photo-1599572739984-8ae9388f23b5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      
-      />
+
+      <h1>CONTACT</h1>
       <div className="contact">
-      
         <div className="contact-col">
-        <h2>Sent us a message <FontAwesomeIcon icon={faPaw} /></h2>
+          <h2>Sent us a message <FontAwesomeIcon icon={faPaw} /></h2>
           <p>Please get in touch via the form or find our contact information below. Your feedback, questions and suggestions are important to the maintenance and growth of the organization.</p>
           <ul>
             <li><FontAwesomeIcon icon={faPhone} />&nbsp;  (+358)255987563</li>
@@ -64,22 +60,13 @@ const Contact = () => {
             <input type="email" name="email" placeholder="Enter your email" required/>
             <label>Your message</label>
             <textarea name="message" rows="6" placeholder="Enter your message" required></textarea>
-            <button type="submit" className="btn">Send <FontAwesomeIcon icon={faArrowRight} /></button>
+            <button type="submit" className="send-btn">Send <FontAwesomeIcon icon={faArrowRight} /></button>
           </form>
           <span>{result}</span>
         </div>
-
-
-
       </div>
-
-
-
-
-
-      
       <Footer/>
-    </>
+    </div>
   );
 }
 

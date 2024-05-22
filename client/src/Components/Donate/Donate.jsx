@@ -33,7 +33,8 @@ const DonatePage = () => {
 
   return (
     <div className="donate-container">
-      <Card className="donate-card" title="Donate for us" style={{ width: 300 }}>  
+      <h1>DONATE</h1>
+      <Card className="donate-card" title="Support Us Financially" style={{ width: 300 }}>  
         <Form onFinish={handleSubmit} initialValues={{amount}}>
           <div className="preset-amounts">
             <Button onClick={() => handleAmountClick(10)}>€5</Button>

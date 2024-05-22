@@ -1,24 +1,46 @@
+.contactPage{
+    background-color:#001f3f ;
+    flex-direction: column;
+}
+
+.contactPage h1{
+    color:#fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contactPage-intro-img{
+    position: relative;
+    background-image: url(https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=2572&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    width: 100%;
+    height:295px;
+}
+
 .contact{
-    margin:80px auto;
+    margin:30px auto;
     max-width: 90%;
     display: flex;
     align-content: center;
     justify-content: center;   
+    height:600px;
 }
 
 .contact-col{
     flex-basis:40%;
-    color:#676767;
+    color:#fff;
 }
 
 .contact-col h2{
-    color: #000F38;
+    color: #fff;
     font-weight: 500;
     font-size: 25px;
 }
 
 .contact-col label{
-    color:#000F38;
+    color:#fff;
     font-weight: 500;
 }
 
@@ -41,9 +63,29 @@
     padding:15px;
     border:0;
     outline:0;
-    margin-bottom:15px;
+    margin-bottom:20px;
     margin-top:5px;
     resize:none;
     border-radius: 8px;
 }
 
+.send-btn {
+    background-color: #fff;
+    color: #003264;
+    padding: 9px 25px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  }
+  
+  .send-btn:hover {
+    background-color: #003264 !important;
+    color: #fff !important;
+    border: solid 2px #fff;
+  }
+  
