@@ -4,18 +4,16 @@ import { Link } from 'react-router-dom';
 import loginImage from "../../assets/login.png";
 import useLogin from '../../Hooks/useLogin';
 import '../../Components/Auth/auth.css';
-import logo from "../../assets/logo.png"
-
+import logo from "../../assets/LogoPetner.png"
 
 const Login = () => {
   const{error, loading, loginUser} = useLogin();
+
   const handleLogin = async (values) => {
     await loginUser(values);
   };
-  return (
-    
-      
-      
+
+  return (  
     <div className="auth-body">
       <div className="logo-container">
             <Link to="/">
@@ -58,34 +56,27 @@ const Login = () => {
                       
 
                       {
-                          error && (<Alert description={error} type="error" showIcon closable className="alert" />)
+                        error && (<Alert description={error} type="error" showIcon closable className="alert" />)
                       }
 
                       <Form.Item>
-                          <Button 
+                        <Button 
                           type={`${loading ? '' : 'primary'}`} 
                           htmlType="submit" size="large" className="auth-btn">
-                              {loading ? <Spin/> :'Sign In'}
-                              
-                              </Button>
+                          {loading ? <Spin/> :'Sign In'} 
+                        </Button>
                       </Form.Item>
 
                       <Form.Item>
                           <Link to="/register">
-                          <Button size="large" className="auth-btn">Register</Button>
+                            <Button size="large" className="auth-btn">Register</Button>
                           </Link>
-                          
                       </Form.Item>
                   </Form>
-
               </Flex>
-
-
-              
           </Flex>
       </Card>
-    </div>
-    
+    </div> 
   )
 }
 

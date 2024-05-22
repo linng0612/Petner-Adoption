@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {message} from 'antd';
 import {useAuth} from  '../Contexts/AuthContext.jsx';
 
-
 const useLogin = () => {
   const {login} = useAuth();
   const [error, setError] = useState(null);
@@ -32,13 +31,10 @@ const useLogin = () => {
           message.error('Registration Failed');
         }
     } catch(error){
-      
       message.error('Registration Failed');
     }finally{
       setLoading(false);
     }
-
-
   }
   return{loading, error, loginUser};
 }

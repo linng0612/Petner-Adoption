@@ -1,11 +1,14 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Input, Checkbox, Button , Card} from 'antd';
 import './Donate.css';
 
 const DonatePage = () => {
-  const [amount, setAmount] = useState('');
+  const [form] = Form.useForm();
+
+  const handleAmountClick = amount => {
+    form.setFieldsValue({ amount });
+  };
 
   const handleSubmit = async (values) => {
     console.log('handleSubmit called');  
@@ -24,32 +27,27 @@ const DonatePage = () => {
     } catch (error) {
         console.error('Error:', error);  
     }
-};
-
-  const handleAmountClick = (value) => {
-    setAmount(value.toString());
   };
-
 
   return (
     <div className="donate-container">
       <h1>DONATE</h1>
-      <Card className="donate-card" title="Support Us Financially" style={{ width: 300 }}>  
-        <Form onFinish={handleSubmit} initialValues={{amount}}>
+      <Card className="donate-card" title="Donate for us" style={{ width: 300 }}>
+        <Form form={form} onFinish={handleSubmit} initialValues={{ amount: 5 }}>
           <div className="preset-amounts">
-            <Button onClick={() => handleAmountClick(10)}>€5</Button>
-            <Button onClick={() => handleAmountClick(20)}>€10</Button>
-            <Button onClick={() => handleAmountClick(30)}>€25</Button>
-            <Button onClick={() => handleAmountClick(10)}>€50</Button>
-            <Button onClick={() => handleAmountClick(20)}>€100</Button>
-            <Button onClick={() => handleAmountClick(30)}>€200</Button>
+            <Button onClick={() => handleAmountClick(5)}>€5</Button>
+            <Button onClick={() => handleAmountClick(10)}>€10</Button>
+            <Button onClick={() => handleAmountClick(25)}>€25</Button>
+            <Button onClick={() => handleAmountClick(50)}>€50</Button>
+            <Button onClick={() => handleAmountClick(100)}>€100</Button>
+            <Button onClick={() => handleAmountClick(200)}>€200</Button>
           </div>
           <Form.Item
-           label={<span className="donate-label">Custom Amount</span>}
-           name="amount"
-           rules={[{ required: true, message: 'Please input your donation amount!' }]}
+            label={<span className="donate-label">Custom Amount</span>}
+            name="amount"
+            rules={[{ required: true, message: 'Please input your donation amount!' }]}
           >
-           <Input type="number" />
+            <Input className="donate-label-input" type="number" />
           </Form.Item>
           <Form.Item name="monthly" valuePropName="checked" initialValue={false}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -59,7 +57,7 @@ const DonatePage = () => {
           <Form.Item>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <Button className="donate-btn" type="primary" htmlType="submit">
-               Donate
+                Donate
               </Button>
             </div>
           </Form.Item>

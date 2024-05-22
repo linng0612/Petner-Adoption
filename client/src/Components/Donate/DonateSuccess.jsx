@@ -5,10 +5,11 @@ function DonateSuccess() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const token = queryParams.get('token');
+  console.log('token:',queryParams)
   const navigate = useNavigate();
 
   return (
-    <div className="donate-background">
+    <div className="success-background-img">
       <div className="success-cancel">
         <h1>Thank you for your donation!</h1>
         <p>Transaction ID: {token}</p>

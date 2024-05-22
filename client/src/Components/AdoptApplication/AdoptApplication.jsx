@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
@@ -31,8 +30,6 @@ const AdoptApplication = () => {
         fetchData();     
         }, []);
 
-    const [open,setOpen] = useState(false);
-
     const updateButtonDisabledState = () => {
         const errors = form.getFieldsError();
         const values = form.getFieldsValue();
@@ -43,16 +40,46 @@ const AdoptApplication = () => {
         setIsDisabled(errors.some(field => field.errors.length) || allFieldsEmpty);
     };
 
-    const handleSubmit = () => {
-        setOpen(true);
-        form.resetFields();
-    }
-
     useEffect(() => {
         updateButtonDisabledState(); 
         console.log(isDisabled)
         return form.getFieldDecorator; 
     }, [form]); 
+
+    const [result, setResult] = useState("");
+    const [open,setOpen] = useState(false);
+
+    const onFinish = async (values) => {
+        setOpen(true);
+        form.resetFields();
+        setResult("Sending...");
+    
+        const formData = new FormData();
+        formData.append("pet_name", pet.name);
+        for (const [key, value] of Object.entries(values)) {
+            formData.append(key, value);
+        }
+        
+        formData.append("access_key", "44662647-be0a-4ea6-976a-a9bababc4fe1");
+    
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+    
+            if (data.success) {
+                setResult("Form Submitted Successfully");
+            } else {
+                console.log("Error", data);
+                setResult(data.message);
+            }
+        } catch (error) {
+            console.error("Fetch error:", error);
+            setResult("Failed to submit");
+        }
+    };
     
     return (
         <div className="adopt-application">
@@ -63,7 +90,7 @@ const AdoptApplication = () => {
                 <div className="adopt-application-content-form-outside">
                     <Form
                     form={form}
-                    onFinish={handleSubmit}
+                    onFinish={onFinish}
                     onValuesChange={updateButtonDisabledState}
                     onFieldsChange={updateButtonDisabledState}
                     name="wrap"
@@ -254,6 +281,7 @@ const AdoptApplication = () => {
                             </Button>
                         </Form.Item>
                     </Form>
+                    <span>{result}</span>
                 </div>
             </section>
             {open &&

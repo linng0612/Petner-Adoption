@@ -52,7 +52,8 @@ return(
             <div className="adopt-detail-content-pets-content-bar"></div>
             <div className="adopt-detail-content-fee">
                 <h2>Adoption fee</h2>
-                <p>Adoption fee 250 €. With the adoption fee, the cat has received at least one triple vaccine (calici, herpes and feline plague), an identification microchip, has been sterilized and has an official health card issued by a veterinarian showing the procedures. The cat has been superficially inspected by a veterinarian, tested negative for FIV/FeLV (unless otherwise stated in the cat description) and dewormed at least once. The cat's microchip is registered in the Siruhaku.fi service.</p>
+                {pet.category === "Dog" ? <p>Adoption fee 450 €. With the adoption fee, the dog has received at least one triple vaccine (distemper, hepatitis, parvovirus), an identification microchip, has been sterilized and has an official health card issued by a veterinarian showing the procedures. The dog has been superficially inspected by a veterinarian, tested negative for heartworm (unless otherwise stated in the dog description) and dewormed at least once. The dog's microchip is registered in the Siruhaku.fi service.</p> : 
+                <p>Adoption fee 250 €. With the adoption fee, the cat has received at least one triple vaccine (calici, herpes and feline plague), an identification microchip, has been sterilized and has an official health card issued by a veterinarian showing the procedures. The cat has been superficially inspected by a veterinarian, tested negative for FIV/FeLV (unless otherwise stated in the cat description) and dewormed at least once. The cat's microchip is registered in the Siruhaku.fi service.</p> }
                 <button onClick={() => setOpen(true)}>Adopt This Little Friend!</button>
             </div>
 
@@ -69,9 +70,9 @@ return(
                                 <h3>Consider before adopting</h3>
                                 <ul>
                                     <li>You must be 20 years or older to adopt a pet from Petner.</li>
-                                    <li>Never adopt a pet out of pity or without serious consideration. The pet might live for the next 15-20 years. With rescue animals, it is extremely important that they would not have to be rehomed again.</li>
-                                    <li>A desire to help is important, but even more important is to be aware of your own resources. Do you have enough resources to take care of a pet? Is your home suitable to meet the long term needs of an active animal?</li>
-                                    <li>We do not have a trial period. The goal of our adoption process is that the adoption has been given careful consideration and the animal is placed into a permanent home. If you or your family member has a predisposition to allergies, we recommend that you get tested for allergies before sending an application.</li>
+                                    <li>Never adopt a pet out of pity or without serious consideration. The pet might live for the next 15-20 years. With rescue pets, it is extremely important that they would not have to be rehomed again.</li>
+                                    <li>A desire to help is important, but even more important is to be aware of your own resources. Do you have enough resources to take care of a pet? Is your home suitable to meet the long term needs of an active pet?</li>
+                                    <li>We do not have a trial period. The goal of our adoption process is that the adoption has been given careful consideration and the pet is placed into a permanent home. If you or your family member has a predisposition to allergies, we recommend that you get tested for allergies before sending an application.</li>
                                     <li>Are you ready to receive the pet when contacting us? Due to a limited number of foster homes we are not able to reserve pets for possible adopters for a long time.</li>
                                     <li>Before sending an application read the pet’s description carefully and consider if it would be a suitable addition to your family and your lifestyle. If you already have other pets it’s important to think how a new pet would fit in.</li>
                                 </ul>

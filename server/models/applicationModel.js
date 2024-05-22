@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const applicationSchema = new mongoose.Schema({ 
-  
   name:{type: String,required: true},
   phonenumber:{type: Number,required: true},
   email:{type: String,required: true},

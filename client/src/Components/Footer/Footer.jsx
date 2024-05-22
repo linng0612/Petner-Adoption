@@ -5,14 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-
 const Footer = () => {
   return (
     <div className="footer">
         <div className="left">
             <div>
-            <img alt="logo" src={logo}/>
-            
+                <img alt="logo" src={logo}/>
             </div>
             <div>
                 <a href="https://www.facebook.com/">
@@ -25,7 +23,6 @@ const Footer = () => {
                     <FontAwesomeIcon icon={faTwitter} />
                 </a>
             </div>
-            
         </div>
 
         <div className="right">
@@ -43,8 +40,7 @@ const Footer = () => {
                 </div>
                 <div className="contact-detail">
                     <FontAwesomeIcon icon={faMapMarkerAlt} />&nbsp; Raviradantie 777, Mikkeli, Finland
-                </div>
-                
+                </div>   
             </div>
         </div>
     </div>

@@ -1,7 +1,6 @@
 const Animal = require('../models/animalModel.js');
 const createError = require('../utils/appError');
 
-
 exports.getallAnimal = async (req, res, next) => {
     try {
         const animals = await Animal.find();

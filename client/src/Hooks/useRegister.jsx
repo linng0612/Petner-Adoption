@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {message} from 'antd';
 import {useAuth} from  '../Contexts/AuthContext.jsx';
 
-
 const useRegister = () => {
   const {login} = useAuth();
   const [error, setError] = useState(null);
@@ -10,13 +9,13 @@ const useRegister = () => {
 
   const registerUser = async (values) =>{
     if (values.password !== values.passwordConfirm){
-      return setError ('Passwords are not the same');
+      return setError ('Passwords do not match');
     }
     
     try{
         setError(null);
         setLoading(true)
-        const res = await fetch('http://localhost:3000/api/user/signup',{
+        const res = await fetch('http://localhost:3000/api/user/register',{
           method: 'POST',
           headers:{
             'Content-Type':'application/json',
@@ -40,8 +39,6 @@ const useRegister = () => {
     }finally{
       setLoading(false);
     }
-
-
   }
   return{loading, error, registerUser};
 }

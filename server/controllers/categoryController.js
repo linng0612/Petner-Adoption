@@ -1,4 +1,3 @@
-
 const Category = require('../models/categoryModel');
 const createError = require('../utils/appError');
 

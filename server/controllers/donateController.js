@@ -55,8 +55,8 @@ router.get('/donate-success', (req, res) => {
     const paymentId = req.query.paymentId;
     let amount = req.query.amount; 
     const currency = req.query.currency;
+    const token = req.query.token;
 
-    console.log('query:', req.query);
     const execute_payment_json = {
         "payer_id": payerId,
         "transactions": [{
@@ -73,7 +73,7 @@ router.get('/donate-success', (req, res) => {
             return res.status(500).send("Payment execution failed. Please try again later.");
         } else {
             console.log("Payment successful:", JSON.stringify(payment));
-            res.redirect('http://localhost:5173/donate/success');
+            res.redirect('http://localhost:5173/donate/success?token=' + token);
         }
     });
 });

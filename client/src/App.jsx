@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Homepage from './Pages/Homepage/Homepage';
@@ -27,9 +26,9 @@ const App = () => {
         <Route path="/adopt" element={<AdoptPage/>}/>
         <Route path="/adopt/detail/:id" element={<AdoptDetail/>}/>
         <Route path="/adopt/detail/:id/application-form" element={<AdoptApplication/>}/>
-        {/* <Route path="/login" element={ !isAuthenticated ? <Login /> :<Navigate to ="/"/>} /> */}
+        <Route path="/login" element={ !isAuthenticated ? <Login /> :<Navigate to ="/"/>} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={ !isAuthenticated ? <Register /> : <Navigate to ="/"/>} /> */}
+        <Route path="/register" element={ !isAuthenticated ? <Register /> : <Navigate to ="/"/>} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </Router>

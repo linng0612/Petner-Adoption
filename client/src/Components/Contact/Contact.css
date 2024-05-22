@@ -83,9 +83,9 @@
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
   }
   
-  .send-btn:hover {
-    background-color: #003264 !important;
-    color: #fff !important;
-    border: solid 2px #fff;
-  }
+.send-btn:hover {
+background-color: #003264 !important;
+color: #fff !important;
+border: solid 2px #fff;
+}
   

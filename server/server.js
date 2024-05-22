@@ -9,14 +9,12 @@ const applicationRoute = require('./routes/applicationRoute');
 const categoryRoute = require('./routes/categoryRoute');
 const connectDatabase = require('./config/database');
 const app = express();
-const donateRouter = require('./config/donate');
-
+const donateRouter = require('./controllers/donateController');
 
 app.use(cors({
     credentials: true,
     origin: 'http://localhost:5173' 
 }));
-
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Credentials', true);
@@ -33,7 +31,6 @@ app.use(function(req, res, next) {
 
 app.use(express.json());
 
-
 connectDatabase();
 
 app.use((err, req, res, next) => {
@@ -45,7 +42,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-
 app.use('/api/adopt', animalRoute);
 app.use('/api/user', userRoute);
 app.use('/api/application', applicationRoute);
@@ -54,8 +50,7 @@ app.use('/api/category', categoryRoute);
 app.use('/api', donateRouter);
 app.get('/', (req, res) => {
     res.send('API is running');
-  });
-
+});
 
 const PORT = 3000;
 app.listen(PORT, () => {

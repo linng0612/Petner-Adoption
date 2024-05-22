@@ -5,7 +5,6 @@ import './Contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faMapMarkerAlt,faPaw,faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-
 const Contact = () => {
   const [result, setResult] = React.useState("");
 

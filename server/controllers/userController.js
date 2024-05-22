@@ -83,7 +83,6 @@ exports.getUserById = async (req, res, next) => {
     }
 };
 
-
 exports.getAllUsers = async (req, res, next) => {
     try{
         const users = await User.find({});
@@ -135,5 +134,4 @@ exports.deleteUser = async (req, res, next) => {
     catch(error){
         next(error);
     }
-
 }

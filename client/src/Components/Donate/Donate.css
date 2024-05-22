@@ -1,12 +1,13 @@
-h1{
+.donate-container h1{
   color:#fff;
 }
+
 .donate-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 100vh;
   width: 100%;
   padding: 20px;
 }
@@ -38,11 +39,12 @@ h1{
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-bottom: 30px;
+
 }
 
 .preset-amounts button {
   background-color: #fff;
-  color: #001f3f;
+  color: #001f3f; 
   border: 1px solid #001f3f;
   padding: 10px 20px;
   font-size: 16px;
@@ -51,10 +53,12 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} 
 
 .preset-amounts button:hover {
-  background-color: #0b172e;
+  background-color: #003264 !important;
+  color:#fff !important;
+  border:none !important;
 }
 
 .donate-card .ant-card-head-title {
@@ -95,14 +99,28 @@ h1{
   font-size: 18px;
 }
 
-
-.donate-background {
-  position: fixed;
+.success-background-img{
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url('https://images.unsplash.com/photo-1494947665470-20322015e3a8?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.cancel-background-img{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://png.pngtree.com/background/20230612/original/pngtree-dog-and-cat-are-in-the-rain-together-picture-image_3187666.jpg');
   background-size: cover;
   background-position: center;
   display: flex;

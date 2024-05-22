@@ -1,7 +1,6 @@
 const Application = require('../models/applicationModel');
 const createError = require('../utils/appError');
 
-
 exports.createApplication = async (req, res, next) => {
     try {
         const newApplication = await Application.create(req.body);
@@ -36,7 +35,6 @@ exports.createApplication = async (req, res, next) => {
         next(error);
     }
 };
-
 
 exports.getApplication = async (req, res, next) => {
     try {

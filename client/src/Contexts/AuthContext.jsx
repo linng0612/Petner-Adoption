@@ -1,6 +1,4 @@
-import { Divider } from 'antd'; 
 import React, {createContext, useContext, useEffect, useState} from 'react';
-
 
 const AuthContext = createContext();
 
@@ -29,6 +27,7 @@ export const AuthProvider = ({children}) => {
         setUserData(newData);
         setIsAuthenticated(true);
     };
+    
     const logout=()=>{
         localStorage.removeItem('user_data');
         setToken(null);
