@@ -147,3 +147,9 @@
 .success-cancel button {
   margin-top: 20px;
 }
+
+@media(max-width:800px){
+  .donate-card .ant-card{
+    max-width:300px;
+  }
+}

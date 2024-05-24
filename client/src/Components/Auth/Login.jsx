@@ -24,7 +24,7 @@ const Login = () => {
       <Card className="form-container ">
           <Flex gap="large" align="center">
               
-              <Flex flex={1}>
+              <Flex flex={1} className="image-container">
                   <img src={loginImage} className="auth-image" />
               </Flex>
               

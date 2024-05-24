@@ -25,7 +25,7 @@
     display: flex;
     align-content: center;
     justify-content: center;   
-    height:600px;
+    height:auto;
 }
 
 .contact-col{
@@ -81,11 +81,33 @@
     outline: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
-  }
-  
-.send-btn:hover {
-background-color: #003264 !important;
-color: #fff !important;
-border: solid 2px #fff;
+    display:block;
 }
   
+.send-btn:hover {
+    background-color: #003264 !important;
+    color: #fff !important;
+    border: solid 2px #fff;
+}
+  
+@media (max-width: 800px) {
+    .contact {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-col {
+      width: 100%;
+      flex-basis: auto;
+      margin-bottom: 20px;
+    }
+  
+    .contact-col p {
+      max-width: 100%;
+    }
+
+    .send-btn{
+        width:fit-content;
+        margin:0 auto;
+    }
+}

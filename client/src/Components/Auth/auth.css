@@ -79,3 +79,28 @@
 .logo-container img {
   width: 200px;
 }
+
+@media screen and (max-width: 800px) {
+  .image-container {
+    display: none;
+  }
+  .form-container {
+    width: 90%; 
+    max-width: 500px;
+    padding: 20px; 
+    height:auto;
+  }
+
+  .auth-image {
+    max-height: 20rem; 
+  }
+
+  .logo-container {
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+  }
+
+  .logo-container img {
+    width: 150px; 
+  }
+}

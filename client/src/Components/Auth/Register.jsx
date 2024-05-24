@@ -78,7 +78,7 @@ const Register = () => {
 
                     </Flex>
 
-                    <Flex flex={1}>
+                    <Flex flex={1} className="image-container">
                         <img src={registerImage} className="auth-image" />
                     </Flex>
                 </Flex>
